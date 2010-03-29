@@ -1,0 +1,103 @@
+{% extends "base.html" %} 
+
+{% block title %}blog{% endblock %} 
+
+{% block header %}
+	<script type="text/javascript" src="http://jquery.com/src/jquery-latest.js"></script>
+	<script type="text/javascript" src="http://fabiosouto.eu/media/js/jquery.mb.flipText.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$(".tb").mbFlipText(true); // top to bottom
+		$(".bt").mbFlipText(false); // bottom to top
+	});
+	</script>
+{% endblock %}
+
+{% block section %}/  blog{% endblock %} 
+we
+
+
+
+{% block content %}
+	{% load blog %}
+	{% for entry in entries.object_list %}
+	<div class="blog_entry">
+		{% get_post_categories entry.id as categories_list %}
+		<a href="/blog/{{entry.slug}}/" class="blogtitle">{{ entry.title }}</a>
+		<p class="blogdescription">Posted {{entry.pub_date|date:"j F Y"}} 
+			on {% for cat in categories_list %}{% if not forloop.first %}, {% endif %}<a href="/blog/category/{{cat.slug}}/" title="{{cat.description}}">{{cat.title}}</a>{% endfor %}
+			</p>
+		{% if entry.tease %}
+			{{ entry.tease|safe }}
+			<a href="/blog/{{entry.slug}}/" title="{{entry.body|wordcount}} words">(Read more)</a>
+		{% else %}
+			{{entry.body|safe}}
+		{% endif %}
+	</div>
+	{% endfor %}
+	
+	<div class="pagination">
+	    <span class="step-links">
+	        {% if entries.has_previous %}
+	            <a href="?page={{ entries.previous_page_number }}">previous</a>
+	        {% endif %}
+
+	        <span class="current">
+	            Page {{ entries.number }} of {{ entries.paginator.num_pages }}.
+	        </span>
+
+	        {% if entries.has_next %}
+	            <a href="?page={{ entries.next_page_number }}">next</a>
+	        {% endif %}
+	    </span>
+		<div id="rss">
+			<a type="application/rss+xml" href="/feeds/rss/"><img class="rssicon" src="http://fabiosouto.eu/media/img/orangerss2.png" alt="RSS feed" /></a>
+		</div>
+	</div>
+
+{% endblock %}
+
+{% block footer %}
+	<div id="blogfooter">
+		<div class="container_16">
+			<div class="grid_1"><p>&nbsp;</p></div>
+			<div class="grid_1">
+				<p  id="categories_title" class="bt">Categories</p>
+			</div>
+			<div class="grid_3">
+				<ul>
+				{% get_blog_categories as categories %}
+				{% for category in categories %}
+					<li><a href="/blog/category/{{category.slug}}" title="{{category.description}}">{{category.title}}</a></li>
+				{% endfor %}
+				</ul>
+			</div>
+			<div class="grid_4">
+				<p  id="archive_title" class="bt">Archive</p>
+			</div>
+			<div class="grid_1">
+				<p id="blogroll_title" class="bt">Blogroll</p>
+			</div>
+			<div class="grid_6">
+				<ul>
+					<li><a href="http://highscalability.com/" title="High Scalability blog" target="_blank">High Scalability blog</a></li>
+					<li><a href="http://fi.am/" title="Fíam's blog" target="_blank">Fíam's blog</a></li>
+					<li><a href="http://www.alzado.org/" title="Alzado" target="_blank">Alzado.org</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="badges">
+		<div class="container_12">
+			<div class="grid_9">
+				<p></p>
+			</div>
+			<div class="grid_3">
+					<a href="http://www.djangoproject.com/"><img src="http://media.djangoproject.com/img/badges/djangomade124x25.gif" border="0" alt="Made with Django." title="Made with Django." /></a>&nbsp;
+					<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" height="31" width="88" /></a>
+
+				
+			</div>
+		</div>
+	</div>
+{% endblock %}

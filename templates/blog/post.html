@@ -1,0 +1,87 @@
+{% extends "base.html" %} 
+
+{% block title %}blog | {{post.title}}{% endblock %} 
+
+{% block header %}
+	<script type="text/javascript" src="http://jquery.com/src/jquery-latest.js"></script>
+	<script type="text/javascript" src="http://fabiosouto.eu/media/js/jquery.mb.flipText.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$(".tb").mbFlipText(true); // top to bottom
+		$(".bt").mbFlipText(false); // bottom to top
+	});
+	</script>
+{% endblock %}
+
+{% block section %}/ blog / {{post.title|truncatewords:3}}{% endblock %} 
+
+
+
+{% block content %}
+	{% load blog %}
+	<div class="blog_entry">
+		{% get_post_categories post.pk as categories_list %}
+		<a href="/blog/{{post.slug}}/" class="blogtitle">{{ post.title }}</a>
+		<p class="blogdescription">Posted {{post.pub_date|date:"j F Y"}} 
+			on {% for cat in categories_list %}{% if not forloop.first %}, {% endif %}<a href="/blog/category/{{cat.slug}}/" title="{{cat.description}}">{{cat.title}}</a>{% endfor %}
+			</p>
+		{{ post.body|safe }}
+	</div>
+{% endblock %}
+
+{% block footer %}
+{% load comments %}
+<div id="comments">
+	<div class="container_16">
+		<div class="grid_1">
+			<p id="comments_title" class="bt">Comments</p>
+		</div>
+		<div class="grid_14">
+				{% get_comment_list for post as comment_list %}
+				<h3>{% get_comment_count for post as comment_count %}{{comment_count}} comments</h3>
+				{% for comment in comment_list %}
+				
+						<p>{{comment.user}} on {{comment.submit_date|date:"j/M/y"}}:</p> 			 {{comment.comment}}
+						<hr/>
+			
+				{% endfor %}
+			
+
+			<div id="comment_form">
+			{% get_comment_form for post as form %}
+			<h3>Tell me something...</h3>
+			<form action="{% comment_form_target %}" method="post">
+				<label for="id_email">Email</label>{{ form.email }}
+				<label for="id_comment">Comment</label>{{ form.comment }} 
+			    {{ form.honeypot }} 
+			    {{ form.content_type }} 
+			    {{ form.object_pk }} 
+			    {{ form.timestamp }} 
+			    {{ form.security_hash }}
+				<input type="hidden" name="next" value="/blog/{{post.slug}}" />
+
+			  <p class="submit">
+			  <input type="submit" name="submit" class="submit-post" value="Submit"/>
+			  </p>
+			</form>
+			</div>
+
+		</div>
+		<div class="grid_1">&nbsp;</div>
+		<div class="clear">&nbsp;</div>
+	</div>
+</div>
+<div id="badges">
+	<div class="container_12">
+		<div class="grid_9">
+			<p></p>
+		</div>
+		<div class="grid_3">
+				<a href="http://www.djangoproject.com/"><img src="http://media.djangoproject.com/img/badges/djangomade124x25.gif" border="0" alt="Made with Django." title="Made with Django." /></a>&nbsp;
+				<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" height="31" width="88" /></a>
+
+			
+		</div>
+	</div>
+</div>
+{% endblock %}

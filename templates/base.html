@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>FabioSouto.eu | {% block title %}{% endblock %}</title>
+		<link rel="alternate" type="application/rss+xml"  href="http://fabiosouto.eu/feeds/rss/" title="News from fabiosouto.eu"/>
+		<link rel="stylesheet" type="text/css" media="all" href="http://fabiosouto.eu/media/css/reset.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="http://fabiosouto.eu/media/css/960.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="http://fabiosouto.eu/media/css/text.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="http://fabiosouto.eu/media/css/style.css" />	
+		<link rel="shortcut icon" type="image/x-icon" href="http://fabiosouto.eu/media/img/favicon.ico" />
+		
+		{% block header %}{% endblock %}
+			
+</head>
+	<body>
+		<div id="header" class="container_16">
+			<div class="grid_1"><p></p></div>
+			<div class="grid_15"><a href="/" class="titulo">fabio souto</a>&nbsp;&nbsp;<span class="tituloseccion">{% block section %}{% endblock %}</span></div>
+			<div class="clear"></div>
+		</div>
+		
+		<div id="content" class="container_16">
+		<div class="grid_1"><p></p></div>
+		<div class="grid_11">
+
+			{% block content %}{% endblock %}
+
+		</div>
+		<div class="grid_4">
+			<ul>
+				<li><a href="/blog" class="secciones">Blog</a></li>
+				<li><a href="/projects" class="secciones">Projects</a></li>
+				<li><a href="/digital" class="secciones">Digital life</a></li>
+				<li><a href="/about" class="secciones">About</a></li>
+				<li><a href="/contact" class="secciones">Contact</a></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+		</div>
+		{% block footer %}{% endblock %}
+		<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<script type="text/javascript">
+		try {
+		var pageTracker = _gat._getTracker("UA-12178332-3");
+		pageTracker._trackPageview();
+		} catch(err) {}</script>
+		
+	</body>
+</html>
