@@ -73,13 +73,21 @@ we
 				{% endfor %}
 				</ul>
 			</div>
-			<div class="grid_4">
-				<p  id="archive_title" class="bt">Archive</p>
+			<div class="grid_1">
+				<p  id="archive_title" class="bt">Latest</p>
 			</div>
+			<div class="grid_5">
+				{% get_blog_entries as latest %}
+				 <ul>
+				{% for post in latest %}
+					<li><a href="/blog/{{post.slug}}" title="{{post.title}}">-{{post.title|truncatewords:6}}</a></li>
+				{% endfor %}
+				</ul>
+			</div>			
 			<div class="grid_1">
 				<p id="blogroll_title" class="bt">Blogroll</p>
 			</div>
-			<div class="grid_6">
+			<div class="grid_4">
 				<ul>
 					<li><a href="http://highscalability.com/" title="High Scalability blog" target="_blank">High Scalability blog</a></li>
 					<li><a href="http://fi.am/" title="Fíam's blog" target="_blank">Fíam's blog</a></li>

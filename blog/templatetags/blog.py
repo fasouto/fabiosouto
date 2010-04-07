@@ -76,3 +76,36 @@ def get_blog_categories(parser, token):
         raise template.TemplateSyntaxError, "%s tag had invalid arguments" % tag_name
     var_name = argument.groups()[0]
     return BlogCategories(var_name)
+
+#Get the latest published entries on the blog ordered by publication date
+class BlogEntries(template.Node):
+    def __init__(self, var_name):
+        self.var_name = var_name
+
+    def render(self, context):
+        blog_entries = Entry.objects.filter(status=2).order_by('-pub_date')[:7]
+        context[self.var_name] = blog_entries
+        return ''
+
+@register.tag
+def get_blog_entries(parser, token):
+    """
+    Gets all blog posts
+
+    Syntax:
+
+        {% get_blog_entries as [var_name] %}
+
+    Example:
+
+        {% get_blog_entries as post_list %}
+    """
+    try:
+        tag_name, arg = token.contents.split(None, 1)
+    except ValueError:
+        raise template.TemplateSyntaxError, "%s tag requires arguments" % token.contents.split()[0]
+    argument = re.search(r'as (\w+)', arg)
+    if not argument:
+        raise template.TemplateSyntaxError, "%s tag had invalid arguments" % tag_name
+    var_name = argument.groups()[0]
+    return BlogEntries(var_name)
