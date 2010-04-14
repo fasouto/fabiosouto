@@ -2,3 +2,5 @@ Source code for http://fabiosouto.eu
 
 Dependencies:
 * python-markdown http://www.freewisdom.org/projects/python-markdown
+* Pygments http://pygments.org/
+* BeautifulSoup http://www.crummy.com/software/BeautifulSoup/
