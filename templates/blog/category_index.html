@@ -32,7 +32,7 @@ we
 			{{ entry.tease|safe }}
 			<a href="/blog/{{entry.slug}}/" title="{{entry.body|wordcount}} words">(Read more)</a>
 		{% else %}
-			{{entry.body|safe}}
+			{{entry.body|render|safe}}
 		{% endif %}
 	</div>
 	{% endfor %}

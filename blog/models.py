@@ -25,7 +25,7 @@ class Entry(models.Model):
 	title = models.CharField(max_length=250,help_text="250 caracteres como máximo")
 	slug = models.SlugField(unique_for_date='pub_date') 
 	body = models.TextField(blank=True) 
-	body_markdown = models.TextField()
+	body_markdown = models.TextField(blank=True)
 	tease = models.TextField(('tease'), blank=True, help_text=('Concise text suggested. Does not appear in RSS feed.'))
 	pub_date = models.DateTimeField(default=datetime.datetime.now) 
 	enable_comments = models.BooleanField(default=True)#permitimos comentarios?
@@ -41,7 +41,8 @@ class Entry(models.Model):
 		
 	def save(self):
 		import markdown
-		self.body = markdown.markdown(self.body_markdown)
+		if self.body_markdown != "":
+			self.body = markdown.markdown(self.body_markdown)
 		super(Entry,self).save()
 		
 	class Meta:

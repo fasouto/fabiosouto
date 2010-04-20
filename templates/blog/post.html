@@ -25,7 +25,7 @@
 		<p class="blogdescription">Posted {{post.pub_date|date:"j F Y"}} 
 			on {% for cat in categories_list %}{% if not forloop.first %}, {% endif %}<a href="/blog/category/{{cat.slug}}/" title="{{cat.description}}">{{cat.title}}</a>{% endfor %}
 			</p>
-		{{ post.body|safe }}
+		{{ post.body|render|safe }}
 	</div>
 {% endblock %}
 

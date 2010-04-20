@@ -28,10 +28,10 @@ we
 			on {% for cat in categories_list %}{% if not forloop.first %}, {% endif %}<a href="/blog/category/{{cat.slug}}/" title="{{cat.description}}">{{cat.title}}</a>{% endfor %}
 			</p>
 		{% if entry.tease %}
-			{{ entry.tease|safe }}
+			{{ entry.tease|render|safe }}
 			<a href="/blog/{{entry.slug}}/" title="{{entry.body|wordcount}} words">(Read more)</a>
 		{% else %}
-			{{entry.body|safe}}
+			{{entry.body|render|safe}}
 		{% endif %}
 	</div>
 	{% endfor %}
