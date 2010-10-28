@@ -30,41 +30,25 @@
 {% endblock %}
 
 {% block footer %}
-{% load comments %}
 <div id="comments">
 	<div class="container_16">
 		<div class="grid_1">
 			<p id="comments_title" class="bt">Comments</p>
 		</div>
 		<div class="grid_14">
-				{% get_comment_list for post as comment_list %}
-				<h3>{% get_comment_count for post as comment_count %}{{comment_count}} comments</h3>
-				{% for comment in comment_list %}
-				
-						<p>{{comment.user}} on {{comment.submit_date|date:"j/M/y"}}:</p> 			 {{comment.comment}}
-						<hr/>
-			
-				{% endfor %}
-			
-
-			<div id="comment_form">
-			{% get_comment_form for post as form %}
-			<h3>Tell me something...</h3>
-			<form action="{% comment_form_target %}" method="post">
-				<label for="id_email">Email</label>{{ form.email }}
-				<label for="id_comment">Comment</label>{{ form.comment }} 
-			    {{ form.honeypot }} 
-			    {{ form.content_type }} 
-			    {{ form.object_pk }} 
-			    {{ form.timestamp }} 
-			    {{ form.security_hash }}
-				<input type="hidden" name="next" value="/blog/{{post.slug}}" />
-
-			  <p class="submit">
-			  <input type="submit" name="submit" class="submit-post" value="Submit"/>
-			  </p>
-			</form>
-			</div>
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+              
+              var disqus_identifier = {{ post.pk }};
+                
+              (function() {
+               var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+               dsq.src = 'http://fabiosouto.disqus.com/embed.js';
+               (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=fabiosouto">comments powered by Disqus.</a></noscript>
+            <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 
 		</div>
 		<div class="grid_1">&nbsp;</div>
