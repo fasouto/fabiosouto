@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*- 
 from django.db import models
+from django.contrib.sitemaps import ping_google
+
 import datetime
+
 
 class Category(models.Model): 
 	title = models.CharField(max_length=250, help_text="250 caracteres como maximo") 
@@ -44,6 +47,10 @@ class Entry(models.Model):
 		if self.body_markdown != "":
 			self.body = markdown.markdown(self.body_markdown)
 		super(Entry,self).save()
+		try:
+			ping_google()
+		except Exception:
+			pass
 		
 	class Meta:
 	    verbose_name="post"

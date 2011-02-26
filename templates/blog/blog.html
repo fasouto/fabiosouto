@@ -79,7 +79,7 @@ we
 				{% get_blog_entries as latest %}
 				 <ul>
 				{% for post in latest %}
-					<li><a href="/blog/{{post.slug}}" title="{{post.title}}">-{{post.title|truncatewords:6}}</a></li>
+					<li><a href="/blog/{{post.slug}}" title="{{post.title}}">{{post.title|truncatewords:6}}</a></li>
 				{% endfor %}
 				</ul>
 			</div>			
@@ -88,9 +88,10 @@ we
 			</div>
 			<div class="grid_4">
 				<ul>
+				    <li><a href="http://www.ironmandestination.com/" title="Ironman Destination">Ironman destination</a></li>
+				    <li><a href="http://pablomontenegro.me/" title="Pablo Montenegro CV">Pablo Montenegro</a></li>
 					<li><a href="http://highscalability.com/" title="High Scalability blog" target="_blank">High Scalability blog</a></li>
 					<li><a href="http://fi.am/" title="Fíam's blog" target="_blank">Fíam's blog</a></li>
-					<li><a href="http://www.alzado.org/" title="Alzado" target="_blank">Alzado.org</a></li>
 				</ul>
 			</div>
 		</div>

@@ -9,9 +9,4 @@ class LatestEntriesFeed(Feed):
 	
 	def items(self):
 		return Entry.objects.filter(status=2).order_by('-pub_date')[:5]
-		
-	def item_link(self,item):
-		return 'http://fabiosouto.eu/blog/%s' % item.slug
-		
-
 
