@@ -29,7 +29,6 @@ class Entry(models.Model):
 	slug = models.SlugField(unique_for_date='pub_date') 
 	body = models.TextField(blank=True) 
 	body_markdown = models.TextField(blank=True)
-	tease = models.TextField(('tease'), blank=True, help_text=('Concise text suggested. Does not appear in RSS feed.'))
 	pub_date = models.DateTimeField(default=datetime.datetime.now) 
 	enable_comments = models.BooleanField(default=True)#permitimos comentarios?
 	featured = models.BooleanField(default=False) #post seleccionado

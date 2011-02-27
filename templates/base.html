@@ -15,6 +15,31 @@
 		<link rel="stylesheet" type="text/css" media="all" href="http://fabiosouto.eu/media/css/style.css" />	
 		<link rel="shortcut icon" type="image/x-icon" href="http://fabiosouto.eu/media/img/favicon.ico" />
 		
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+		
+		<!--BEGIN OF KONAMI CODE -->
+		<script type="text/javascript" src="http://fabiosouto.eu/media/js/jquery.color.js"></script>
+	    <script type="text/javascript">	    
+    	    var kkeys = [], konami = "38,38,40,40,37,39,37,39,66,65";
+            $(document).keydown(function(e) {
+              kkeys.push( e.keyCode );
+              if ( kkeys.toString().indexOf( konami ) >= 0 ){
+                $(document).unbind('keydown',arguments.callee);
+                    spectrum();  
+              }
+          
+              function spectrum(){  
+                 var hue = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';  
+                 $('.tituloseccion').replaceWith('god mode!');
+                 $('.titulo').animate( { color: hue }, 2000); 
+                 $('.secciones').animate( { color: hue }, 1000); 
+                 spectrum();  
+              }
+            });
+        </script>
+        <!--END OF KONAMI CODE-->
+        
+        
 		{% block header %}{% endblock %}
 			
 </head>

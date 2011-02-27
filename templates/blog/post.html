@@ -3,8 +3,7 @@
 {% block title %}blog | {{post.title}}{% endblock %} 
 
 {% block header %}
-	<script type="text/javascript" src="http://jquery.com/src/jquery-latest.js"></script>
-	<script type="text/javascript" src="http://fabiosouto.eu/media/js/jquery.mb.flipText.min.js"></script>
+    <script type="text/javascript" src="http://fabiosouto.eu/media/js/jquery.mb.flipText.min.js"></script>
 	<script type="text/javascript">
 	$(function(){
 		$(".tb").mbFlipText(true); // top to bottom
@@ -25,7 +24,7 @@
 		<p class="blogdescription">Posted {{post.pub_date|date:"j F Y"}} 
 			on {% for cat in categories_list %}{% if not forloop.first %}, {% endif %}<a href="/blog/category/{{cat.slug}}/" title="{{cat.description}}">{{cat.title}}</a>{% endfor %}
 			</p>
-		{{ post.body|render|safe }}
+    		{{ post.body|render|safe }}
 	</div>
 {% endblock %}
 
@@ -37,18 +36,22 @@
 		</div>
 		<div class="grid_14">
             <div id="disqus_thread"></div>
+            {%  if post.enable_comments %}
             <script type="text/javascript">
               
               var disqus_identifier = {{ post.pk }};
                 
               (function() {
                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-               dsq.src = 'http://fabiosouto.disqus.com/embed.js';
+               dsq.src = 'http://{{DISQUS_SHORTNAME}}.disqus.com/embed.js';
                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
               })();
             </script>
-            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=fabiosouto">comments powered by Disqus.</a></noscript>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript={{DISQUS_SHORTNAME}}">comments powered by Disqus.</a></noscript>
             <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+            {% else %}
+                <h2>No comments allowed for this entry</h2>
+            {% endif %}
 
 		</div>
 		<div class="grid_1">&nbsp;</div>

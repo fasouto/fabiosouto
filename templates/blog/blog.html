@@ -3,7 +3,6 @@
 {% block title %}blog{% endblock %} 
 
 {% block header %}
-	<script type="text/javascript" src="http://jquery.com/src/jquery-latest.js"></script>
 	<script type="text/javascript" src="http://fabiosouto.eu/media/js/jquery.mb.flipText.min.js"></script>
 	<script type="text/javascript">
 	$(function(){
@@ -14,9 +13,6 @@
 {% endblock %}
 
 {% block section %}/  blog{% endblock %} 
-we
-
-
 
 {% block content %}
 	{% load blog %}
@@ -27,12 +23,7 @@ we
 		<p class="blogdescription">Posted {{entry.pub_date|date:"j F Y"}} 
 			on {% for cat in categories_list %}{% if not forloop.first %}, {% endif %}<a href="/blog/category/{{cat.slug}}/" title="{{cat.description}}">{{cat.title}}</a>{% endfor %}
 			</p>
-		{% if entry.tease %}
-			{{ entry.tease|render|safe }}
-			<a href="/blog/{{entry.slug}}/" title="{{entry.body|wordcount}} words">(Read more)</a>
-		{% else %}
 			{{entry.body|render|safe}}
-		{% endif %}
 	</div>
 	{% endfor %}
 	

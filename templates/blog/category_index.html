@@ -28,12 +28,7 @@ we
 		<p class="blogdescription">Posted {{entry.pub_date|date:"j F Y"}} 
 			on {% for cat in categories_list %}{% if not forloop.first %}, {% endif %}<a href="/blog/category/{{cat.slug}}/" title="{{cat.description}}">{{cat.title}}</a>{% endfor %}
 			</p>
-		{% if entry.tease %}
-			{{ entry.tease|safe }}
-			<a href="/blog/{{entry.slug}}/" title="{{entry.body|wordcount}} words">(Read more)</a>
-		{% else %}
-			{{entry.body|render|safe}}
-		{% endif %}
+		{{entry.body|render|safe}}
 	</div>
 	{% endfor %}
 	

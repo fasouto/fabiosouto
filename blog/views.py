@@ -41,7 +41,7 @@ def view_post(request,slug_post):
 		post = Entry.objects.filter(status=2).get(slug=slug_post)
 	except Entry.DoesNotExist:
 		raise Http404
-	return render_to_response('blog/post.html',{'post':post},RequestContext(request))
+	return render_to_response('blog/post.html',{'post':post, 'DISQUS_SHORTNAME':settings.DISQUS_SHORTNAME},RequestContext(request))
 	
 #List all post from a selected category
 def category_index(request,slug_category):
