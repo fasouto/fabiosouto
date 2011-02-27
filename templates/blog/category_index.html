@@ -19,15 +19,16 @@ we
 
 
 {% block content %}
-	{% load blog %}
+	{% load blog %}	
 	<a href="/blog/category/{{category.slug}}/" class="blogtitle">Posts in the category: {{category.title}}</a><br/><br/>
 	{% for entry in entries.object_list %}
 	<div class="blog_entry">
-		{% get_post_categories entry.id as categories_list %}
-		<a href="/blog/{{entry.slug}}/" class="blogtitle">{{ entry.title }}</a>
-		<p class="blogdescription">Posted {{entry.pub_date|date:"j F Y"}} 
-			on {% for cat in categories_list %}{% if not forloop.first %}, {% endif %}<a href="/blog/category/{{cat.slug}}/" title="{{cat.description}}">{{cat.title}}</a>{% endfor %}
-			</p>
+	    <article>
+	        <header>
+        		{% get_post_categories entry.id as categories_list %}
+        		<a href="/blog/{{entry.slug}}/" class="blogtitle">{{ entry.title }}</a>
+        		<p class="blogdescription">Posted <time pubdate="{{entry.pub_date.date}}">{{entry.pub_date|date:"j F Y"}} on {% for cat in categories_list %}{% if not forloop.first %}, {% endif %}<a href="/blog/category/{{cat.slug}}/" title="{{cat.description}}">{{cat.title}}</a>{% endfor %}</p>
+		    </header>
 		{{entry.body|render|safe}}
 	</div>
 	{% endfor %}
