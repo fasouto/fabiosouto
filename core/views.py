@@ -1,9 +1,10 @@
-from django.http import HttpResponseRedirect
+# -*- coding: utf-8 -*-
 from django.shortcuts import render_to_response
 from django.core.mail import send_mail
-from forms import ContactForm
+from core.forms import ContactForm
 
 def contact(request):
+    """Send an email to the specified account"""
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
