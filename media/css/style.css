@@ -1,0 +1,321 @@
+#header {
+	padding-top:10px;
+}
+#content {
+	padding-top:20px;
+}
+
+ul {
+	list-style-type: none;
+}
+
+li {	
+	margin: 0;
+	padding: 0;
+}
+
+a
+{
+	color: #819E19;
+	text-decoration:none;
+}
+
+a.secciones
+{
+	font-weight: 100;
+	letter-spacing: -1px;
+	font-size: 200%;
+	background-color: white ;
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	text-decoration: none;
+}
+
+a.secciones:link
+{
+	color:black;
+	color: #405156 ;
+}
+
+a.secciones:active
+{
+	color: #405156;
+
+}
+
+a.secciones:visited
+{
+	color:#405156 ;
+}
+a.secciones:hover
+{
+	color: #819E19;
+}
+
+.tituloseccion {
+/*	font-weight: bold;*/
+	letter-spacing: -4px;
+/*	color: #D1D9DC;*/
+	color:#819E19;
+	font-size: 50px;
+	background-color: white ;
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	text-decoration: none;	
+}
+
+.titulo {
+	font-weight: 100;
+	letter-spacing: -3px;
+	color: #333;
+	font-size: 50px;
+	background-color: white ;
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	text-decoration: none;	
+}
+
+.descripcion {
+	padding-left:10px;
+	font-weight: 100;
+	letter-spacing: -1px;
+	color: #AAA;
+	font-size: 18px;
+	background-color: white ;
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	text-decoration: none;	
+}
+
+
+/*estilos para el blog*/
+
+
+blockquote {
+	font-family: Verdana, sans-serif;
+	font-size:150%;
+	margin:22px 40px;
+	padding:3px;
+	color:#575757;
+	padding: 0 50px;
+	background: transparent url("http://fabiosouto.eu/media/img/blockquote.gif") no-repeat 0 0;
+}
+
+a.blogtitle
+{
+	font-weight: bold;
+	letter-spacing: -1px;
+	font-size: 200%;
+	background-color: white ;
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	text-decoration: none;
+}
+
+a.blogtitle:link
+{
+	color:black;
+	color: #333 ;
+}
+
+a.blogtitle:active
+{
+	color: #333;
+
+}
+
+a.blogtitle:visited
+{
+	color:#333 ;
+}
+a.blogtitle:hover
+{
+	color: #819E19;
+}
+
+.blog_entry
+{
+	padding-bottom:20px;
+}
+
+/*estilos del about*/
+
+.descripcion_about  {
+	font-weight: 100;
+	letter-spacing: -1px;
+	line-height:25px;
+	color: #AAA;
+	font-size: 18px;
+	background-color: white ;
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	text-decoration: none;	
+}
+
+
+/*estilo para el formulario de contacto*/
+#contact-area {
+	width: 600px;
+	margin-top: 15px;
+}
+
+#contact-area input, #contact-area textarea {
+	padding: 5px;
+	width: 471px;
+	font-family: Helvetica, sans-serif;
+	font-size: 1.4em;
+	border: 2px solid #ccc;
+}
+
+#contact-area textarea {
+	height: 90px;
+}
+
+#contact-area textarea:focus, #contact-area input:focus {
+	border: 2px solid #819E19;
+}
+
+#contact-area input.submit-button {
+	width: 200px;
+	float: right;
+}
+
+#contact-area label {
+	float:left;
+	text-align:left;
+	margin-right: 15px;
+	width:100px;
+	
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	font-size:25px;
+	font-weight:200;
+	color:#405156;
+}
+
+/*estilos para el mensaje de error*/
+.info, .success, .warning, .errorlist, .validation {
+	font-size:15px;
+	border: 1px solid;
+	margin: 10px 0px;
+	padding:15px 10px 15px 50px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+}
+
+.errorlist {
+	color: #9F6000;
+	background-color: #FEEFB3;
+	background-image: url('http://fabiosouto.eu/media/img/validation.png');
+}
+
+
+/*estilos de los comentarios*/
+#comments {
+	background-color:#212121;
+	color:#FFF;
+	min-height:200px;
+	
+	padding-bottom:10px;
+}
+
+#comments_title {
+	background-color:#212121;
+	padding-top:15px;
+	font-size:35px;	
+}
+
+#comment_form {
+	padding-left:10px;
+	width: 600px;
+	margin-top: 15px;
+}
+
+
+#comment_form input, #comment_form textarea {
+	padding: 5px;
+	width: 471px;
+	font-family: Helvetica, sans-serif;
+	font-size: 1.4em;
+	border: 2px solid #ccc;
+}
+
+#comment_form textarea {
+	height: 90px;
+}
+
+#comment_form textarea:focus, #comment_form input:focus {
+	border: 2px solid #819E19;
+}
+
+#comment_form input.submit-post {
+	width: 200px;
+	float: right;
+}
+
+#comment_form label {
+	float:left;
+	text-align:left;
+	margin-right: 15px;
+	width:100px;
+	
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	font-size:15px;
+	font-weight:200;
+	color:#FFF;
+}
+
+.comment {
+	width:600px;
+	color:#FFF;
+}
+
+/*have to hide the honeypot in the comments*/
+#id_honeypot {
+	display:none;
+}
+
+#blogfooter {
+	background-color:#212121;
+	color:#FFF;
+	min-height:200px;
+	padding-bottom:10px;
+}
+
+/*RSS Icon*/
+.rssicon {
+	width:30%;
+	height:30%;
+}
+
+#rss {
+	float:right;
+	vertical-align: baseline; 
+	bottom:0;
+}
+
+#blogfooter ul {
+	padding-top:15px;
+}
+
+/*Categories*/
+#categories_title {
+	background-color:#212121;
+	padding-top:15px;
+	font-size:35px;	
+}
+
+/*Blogroll*/
+#blogroll_title {
+	background-color:#212121;
+	padding-top:15px;
+	font-size:35px;	
+}
+/*Archive*/
+#archive_title {
+	background-color:#212121;
+	padding-top:15px;
+	font-size:35px;	
+}
+
+/*badges*/
+#badges {
+	background-color:#212121;
+	color:#FFF;
+	padding-bottom:10px;
+	min-height:40px;
+}
+

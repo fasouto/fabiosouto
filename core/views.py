@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render_to_response
 from django.core.mail import send_mail
-from core.forms import ContactForm
+from forms import ContactForm
 
 def contact(request):
     """Send an email to the specified account"""

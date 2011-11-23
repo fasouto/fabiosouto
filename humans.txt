@@ -1,0 +1,11 @@
+/* TEAM */
+Developer: Fabio Souto Moure
+Site: fabiosouto.me :D
+Twitter: @fsoutomo
+Location: Vigo, Spain
+
+/* SITE */
+Last update: 10 October 2011
+Language: English
+Components: 960.gs, jQuery, Django.
+Software: Textmate, vim, git.

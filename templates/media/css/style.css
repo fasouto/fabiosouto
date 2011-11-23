@@ -1,0 +1,394 @@
+#header {
+	padding-top:10px;
+}
+#content {
+	padding-top:20px;
+}
+
+ul {
+	list-style-type: none;
+}
+
+ol {
+	padding-left:30px;
+}
+
+li {	
+	margin: 0;
+	padding: 0;
+}
+
+a
+{
+	color: #819E19;
+	text-decoration:none;
+}
+
+a.secciones
+{
+	font-weight: 100;
+	letter-spacing: -1px;
+	font-size: 200%;
+	background-color: white ;
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	text-decoration: none;
+}
+
+a.secciones:link
+{
+	color:black;
+	color: #405156 ;
+}
+
+a.secciones:active
+{
+	color: #405156;
+
+}
+
+a.secciones:visited
+{
+	color:#405156 ;
+}
+a.secciones:hover
+{
+	color: #819E19;
+}
+
+.tituloseccion {
+/*	font-weight: bold;*/
+	letter-spacing: -4px;
+/*	color: #D1D9DC;*/
+	color:#819E19;
+	font-size: 50px;
+	background-color: white ;
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	text-decoration: none;	
+}
+
+.titulo {
+	font-weight: 100;
+	letter-spacing: -3px;
+	color: #333;
+	font-size: 50px;
+	background-color: white ;
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	text-decoration: none;	
+}
+
+.descripcion {
+	padding-left:10px;
+	font-weight: 100;
+	letter-spacing: -1px;
+	color: #AAA;
+	font-size: 18px;
+	background-color: white ;
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	text-decoration: none;	
+}
+
+
+/*estilos para el blog*/
+
+
+blockquote {
+	font-family: Verdana, sans-serif;
+	font-size:150%;
+	margin:22px 40px;
+	padding:3px;
+	color:#575757;
+	padding: 0 50px;
+	background: transparent url("http://fabiosouto.eu/media/img/blockquote.gif") no-repeat 0 0;
+}
+
+a.blogtitle
+{
+	font-weight: bold;
+	letter-spacing: -1px;
+	font-size: 200%;
+	background-color: white ;
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	text-decoration: none;
+}
+
+a.blogtitle:link
+{
+	color:black;
+	color: #333 ;
+}
+
+a.blogtitle:active
+{
+	color: #333;
+
+}
+
+a.blogtitle:visited
+{
+	color:#333 ;
+}
+a.blogtitle:hover
+{
+	color: #819E19;
+}
+
+.blog_entry
+{
+	padding-bottom:20px;
+}
+
+/*estilos del about*/
+
+.descripcion_about  {
+	font-weight: 100;
+	letter-spacing: -1px;
+	line-height:25px;
+	color: #AAA;
+	font-size: 18px;
+	background-color: white ;
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	text-decoration: none;	
+}
+
+
+/*estilo para el formulario de contacto*/
+#contact-area {
+	width: 600px;
+	margin-top: 15px;
+}
+
+#contact-area input, #contact-area textarea {
+	padding: 5px;
+	width: 471px;
+	font-family: Helvetica, sans-serif;
+	font-size: 1.4em;
+	border: 2px solid #ccc;
+}
+
+#contact-area textarea {
+	height: 90px;
+}
+
+#contact-area textarea:focus, #contact-area input:focus {
+	border: 2px solid #819E19;
+}
+
+#contact-area input.submit-button {
+	width: 200px;
+	float: right;
+}
+
+#contact-area label {
+	float:left;
+	text-align:left;
+	margin-right: 15px;
+	width:100px;
+	
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	font-size:25px;
+	font-weight:200;
+	color:#405156;
+}
+
+/*estilos para el mensaje de error*/
+.info, .success, .warning, .errorlist, .validation {
+	font-size:15px;
+	border: 1px solid;
+	margin: 10px 0px;
+	padding:15px 10px 15px 50px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+}
+
+.errorlist {
+	color: #9F6000;
+	background-color: #FEEFB3;
+	background-image: url('http://fabiosouto.eu/media/img/validation.png');
+}
+
+
+/*estilos de los comentarios*/
+#comments {
+	background-color:#212121;
+	color:#FFF;
+	min-height:200px;
+	
+	padding-bottom:10px;
+}
+
+#comments_title {
+	background-color:#212121;
+	padding-top:15px;
+	font-size:35px;	
+}
+
+#comment_form {
+	padding-left:10px;
+	width: 600px;
+	margin-top: 15px;
+}
+
+
+#comment_form input, #comment_form textarea {
+	padding: 5px;
+	width: 471px;
+	font-family: Helvetica, sans-serif;
+	font-size: 1.4em;
+	border: 2px solid #ccc;
+}
+
+#comment_form textarea {
+	height: 90px;
+}
+
+#comment_form textarea:focus, #comment_form input:focus {
+	border: 2px solid #819E19;
+}
+
+#comment_form input.submit-post {
+	width: 200px;
+	float: right;
+}
+
+#comment_form label {
+	float:left;
+	text-align:left;
+	margin-right: 15px;
+	width:100px;
+	
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	font-size:15px;
+	font-weight:200;
+	color:#FFF;
+}
+
+.comment {
+	width:600px;
+	color:#FFF;
+}
+
+/*to center the images*/
+img.displayed {
+	display: block;
+	margin-left: auto;
+	margin-right: auto 
+}
+
+
+/*have to hide the honeypot in the comments*/
+#id_honeypot {
+	display:none;
+}
+
+#blogfooter {
+	background-color:#212121;
+	color:#FFF;
+	min-height:200px;
+	padding-bottom:10px;
+}
+
+/*RSS Icon*/
+.rssicon {
+	width:65px;
+	height:50px;
+}
+
+#rss {
+	float:right;
+	vertical-align: baseline; 
+	bottom:0;
+}
+
+#blogfooter ul {
+	padding-top:15px;
+}
+
+/*Categories*/
+#categories_title {
+	background-color:#212121;
+	padding-top:15px;
+	font-size:35px;	
+}
+
+/*Blogroll*/
+#blogroll_title {
+	background-color:#212121;
+	padding-top:15px;
+	font-size:35px;	
+}
+/*Archive*/
+#archive_title {
+	background-color:#212121;
+	padding-top:15px;
+	font-size:35px;	
+}
+
+/*badges*/
+#badges {
+	background-color:#212121;
+	padding-bottom:80px;
+	vertical-align:baseline;
+}
+
+/* Pygments*/
+/* customized */
+.c  { color: #008040; font-style: italic } /* Comment */
+.cm { color: #008040; font-style: italic } /* Comment.Multiline */
+.cp { color: #BC7A00 } /* Comment.Preproc */
+.c1 { color: #008040; font-style: italic } /* Comment.Single */
+.cs { color: #008040; font-style: italic } /* Comment.Special */
+.gi { color: red; } /* Generic.Inserted */
+.k  { color: #000080; font-weight: bold } /* Keyword */
+.kc { color: #000000; font-weight: bold } /* Keyword.Constant */
+.kd { color: #000000; font-weight: bold } /* Keyword.Declaration */
+.kp { color: #000000 } /* Keyword.Pseudo */
+.kr { color: #000000; font-weight: bold } /* Keyword.Reserved */
+.kt { color: #000000; font-weight: bold } /* Keyword.Type */
+
+/* original settings */
+.err { border: 1px solid #FF0000 } /* Error */
+.o { color: #666666 } /* Operator */
+.ge { font-style: italic } /* Generic.Emph */
+.gr { color: #FF0000 } /* Generic.Error */
+.gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.go { color: #808080 } /* Generic.Output */
+.gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.gs { font-weight: bold } /* Generic.Strong */
+.gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.gt { color: #0040D0 } /* Generic.Traceback */
+.m { color: #666666 } /* Literal.Number */
+.s { color: #BA2121 } /* Literal.String */
+.na { color: #7D9029 } /* Name.Attribute */
+.nb { color: #008000 } /* Name.Builtin */
+.nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.no { color: #880000 } /* Name.Constant */
+.nd { color: #AA22FF } /* Name.Decorator */
+.ni { color: #999999; font-weight: bold } /* Name.Entity */
+.ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.nf { color: #0000FF } /* Name.Function */
+.nl { color: #A0A000 } /* Name.Label */
+.nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.nt { color: #008000; font-weight: bold } /* Name.Tag */
+.nv { color: #19177C } /* Name.Variable */
+.ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.w { color: #bbbbbb } /* Text.Whitespace */
+.mf { color: #666666 } /* Literal.Number.Float */
+.mh { color: #666666 } /* Literal.Number.Hex */
+.mi { color: #666666 } /* Literal.Number.Integer */
+.mo { color: #666666 } /* Literal.Number.Oct */
+.sb { color: #BA2121 } /* Literal.String.Backtick */
+.sc { color: #BA2121 } /* Literal.String.Char */
+.sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.s2 { color: #BA2121 } /* Literal.String.Double */
+.se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.sh { color: #BA2121 } /* Literal.String.Heredoc */
+.si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.sx { color: #008000 } /* Literal.String.Other */
+.sr { color: #BB6688 } /* Literal.String.Regex */
+.s1 { color: #BA2121 } /* Literal.String.Single */
+.ss { color: #19177C } /* Literal.String.Symbol */
+.bp { color: #008000 } /* Name.Builtin.Pseudo */
+.vc { color: #19177C } /* Name.Variable.Class */
+.vg { color: #19177C } /* Name.Variable.Global */
+.vi { color: #19177C } /* Name.Variable.Instance */
+.il { color: #666666 } /* Literal.Number.Integer.Long */
